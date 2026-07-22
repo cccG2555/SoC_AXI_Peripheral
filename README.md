@@ -19,7 +19,7 @@
   * `cfg_reg`, `w_reg`, `r_reg` 레지스터를 포함하는 AXI Slave 모듈과 SPI Master 모듈이 연결됩니다.
   * GPIO 인터페이스를 통해 4개의 버튼, 7-segment, 8개의 스위치와 연결됩니다.
 * **Implementation**
-  * Basys 3 보드를 활용하여 Master와 Slave 환경을 구현했습니다.
+  * Basys-3 보드를 활용하여 Master와 Slave 환경을 구현했습니다.
   * Master의 U 버튼을 누르면 SPI 데이터 전송이 시작됩니다.
   * Master의 8개 스위치 입력 값은 MOSI 핀을 통해 전달되어 Slave의 FND(0-255)에 출력됩니다.
   * Slave의 8개 스위치 입력 값은 MISO 핀을 통해 전달되어 Master의 FND(0-255)에 출력됩니다.
@@ -38,7 +38,7 @@
   * `cmd_reg`, `tx_reg`, `rx_reg`, `sig_reg` 레지스터를 가지는 AXI Slave 모듈과 I2C Master 모듈이 연결된 형태입니다.
   * 10us 주기로 Interrupt를 발생시켜 10usec Up-counter를 증가시키는 Timer 기능이 포함되어 있습니다.
 * **Implementation**
-  * Basys 3 보드의 Master U 버튼을 사용하여 카운터를 Run/Stop 할 수 있습니다.
+  * Basys-3 보드의 Master U 버튼을 사용하여 카운터를 Run/Stop 할 수 있습니다.
   * Master의 스위치 15번(`switch[15]`)을 조작하여 WRITE 모드와 READ 모드를 토글합니다.
   * Slave의 스위치 0번(`switch[0]`)을 통해 Slave 측 카운터를 활성화 또는 비활성화할 수 있습니다.
   * WRITE 모드에서는 Master의 카운터 값이 Master와 Slave 보드의 FND에 출력됩니다.
@@ -48,7 +48,7 @@
   * 송신 데이터(8-bit `tx_data`)와 연속 데이터 송수신 횟수(1~16회)를 모두 랜덤으로 생성하여 검증을 진행했습니다.
   * Scoreboard를 통해 WRITE 시 Master의 송신 데이터가 Slave의 수신 데이터와 일치하는지 검사했습니다.
   * READ 시에는 Slave의 송신 데이터가 Master의 수신 데이터와 일치하는지 확인하여 PASS/FAIL을 판별했습니다.
-  * 데이터 값에 대한 특이 패턴 및 범위 Coverage와 더불어, 연속 데이터 송수신 횟수(1~8회, 9~16회)에 대한 Coverage도 완벽히 달성했습니다.
+  * 데이터 값에 대한 특이 패턴 및 범위 Coverage와 더불어, 연속 데이터 송수신 횟수(1-8회, 9-16회)에 대한 Coverage도 완벽히 달성했습니다.
 
 ## 🔍 Trouble Shooting
 * **AXI WSTRB** 이슈: 개발 및 검증 과정에서 발생한 AXI Write Strobe 관련 문제를 식별하고 해결하여 데이터 송수신의 안정성을 확보했습니다.
