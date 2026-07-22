@@ -1,0 +1,19 @@
+module I2C_Master (  // Top I2C Master
+    input  logic       clk,
+    input  logic       rst,
+    // command port
+    input  logic       cmd_start,
+    input  logic       cmd_write,
+    input  logic       cmd_read,
+    input  logic       cmd_stop,
+    input  logic [7:0] tx_data,
+    input  logic       ack_in,
+    // internal output
+    output logic [7:0] rx_data,
+    output logic       done,
+    output logic       ack_out,
+    output logic       busy,
+    // external port
+    output logic       scl,
+    inout              sda
+);

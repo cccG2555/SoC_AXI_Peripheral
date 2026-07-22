@@ -1,0 +1,10 @@
+module i2c_slave (
+    input              clk,
+    input              rst,
+    input        [7:0] tx_data,
+    input              scl,      // inout actually?
+    inout              sda,
+    output logic [7:0] rx_data,
+    output logic       sending,
+    output logic       done
+);

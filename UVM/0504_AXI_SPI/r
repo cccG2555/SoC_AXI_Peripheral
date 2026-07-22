@@ -1,0 +1,4 @@
+total 28
+-rw-r--r-- 1 hedu30 hedu30 9245 May  4 19:17 SPI_Master_v1_0.v
+-rw-r--r-- 1 hedu30 hedu30 9990 May  4 19:17 SPI_Master_v1_0_S00_AXI.v
+-rw-r--r-- 1 hedu30 hedu30 3287 May  4 20:59 spi_slave.sv
